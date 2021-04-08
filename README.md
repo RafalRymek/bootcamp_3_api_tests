@@ -1,6 +1,6 @@
 # Bootcamp API automated tests
 
-Automated API tests to cover endpoints from https://reqres.in/ resource
+Automated API tests to cover endpoints from https://reqres.in/{resource}
 
 ### Following tech stack is using:
 
