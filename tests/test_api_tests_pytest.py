@@ -16,7 +16,7 @@ def test_get_list_users():
     assert_that(data["email"], is_(equal_to("michael.lawson@reqres.in")), reason="Wrong email")
     assert_that(data["first_name"], has_string("Michael"), reason="Wrong name")
     assert_that(data["last_name"], has_string("Lawson"), reason="Wrong surname")
-    assert_that(data[5]["id"], is_(equal_to(12)))
+    assert_that(response.json()["data"][5]["id"], is_(equal_to(12)))
 
 
 def test_get_single_user():
@@ -111,10 +111,9 @@ def test_get_delay_response():
     # actions
     start_time = time.time()
     response = requests.get(url=get_delay_url)
-    data = response.json()["data"][0]
     # results
     end_time = time.time()
     delay_time = float("%.2g" % (end_time - start_time))
     assert_that(delay_time, greater_than(3.0), reason="Wrong delay time")
-    assert_that(data["email"], is_(equal_to("george.bluth@reqres.in")), reason="Wrong email")
-    assert_that(data[5]["email"], is_(equal_to("tracey.ramos@reqres.in")), reason="Wrong email")
+    assert_that(response.json()["data"][0]["email"], is_(equal_to("george.bluth@reqres.in")), reason="Wrong email")
+    assert_that(response.json()["data"][5]["email"], is_(equal_to("tracey.ramos@reqres.in")), reason="Wrong email")
