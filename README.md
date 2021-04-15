@@ -1,4 +1,4 @@
-#Bootcamp API automated tests
+# Bootcamp API automated tests
 Automated API tests to cover endpoints from https://reqres.in/{resource}
 
 Following tech stack is using:
@@ -6,14 +6,14 @@ python
 unittest  
 pytest 
 
-#Setup:
+# Setup:
 open terminal
 run `git clone https://github.com/RafalRymek/bootcamp_3_api_tests.git` to clone repository   
 run `cd bootcamp_3_api_tests` to move to local repository folder  
 run `pipenv install` to set up all necessary dependencies from Pipfile.lock  
 run `pipenv shell` to be able to use all pipenv dependencies from terminal
 
-#Execution:
+#  Execution:
 to run API tests:  
 `python3 tests/api_tests.py`
 
